@@ -85,6 +85,19 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>36D5A0729259A225AB6EFE5F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-MakemojiSDK-KeyboardExtension_Tests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>3E080923343FF44938578DFD</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -124,13 +137,6 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>4B12E64B09AEF252D0647A74</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC361173C9AF4B2A2B7A36FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>5060D664FA83C14BA841964D</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -155,6 +161,13 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>54B812414BB4499C57D05807</key>
+		<dict>
+			<key>fileRef</key>
+			<string>36D5A0729259A225AB6EFE5F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>6003F581195388D10070C39A</key>
 		<dict>
 			<key>children</key>
@@ -162,6 +175,7 @@ fi
 				<string>60FF7A9C1954A5C5007DD14C</string>
 				<string>6003F593195388D20070C39A</string>
 				<string>6003F5B5195388D20070C39A</string>
+				<string>C6F0C90D1CA9F6F3005CE566</string>
 				<string>6003F58C195388D20070C39A</string>
 				<string>6003F58B195388D20070C39A</string>
 				<string>FDE4A1A4DB4E9A0CD03F5418</string>
@@ -187,6 +201,11 @@ fi
 					<dict>
 						<key>TestTargetID</key>
 						<string>6003F589195388D20070C39A</string>
+					</dict>
+					<key>C6F0C90B1CA9F6F3005CE566</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
 					</dict>
 				</dict>
 			</dict>
@@ -219,6 +238,7 @@ fi
 			<array>
 				<string>6003F589195388D20070C39A</string>
 				<string>6003F5AD195388D20070C39A</string>
+				<string>C6F0C90B1CA9F6F3005CE566</string>
 			</array>
 		</dict>
 		<key>6003F585195388D10070C39A</key>
@@ -259,7 +279,7 @@ fi
 				<string>6003F590195388D20070C39A</string>
 				<string>6003F592195388D20070C39A</string>
 				<string>6003F58E195388D20070C39A</string>
-				<string>BAEBD62F59517620B19EEF50</string>
+				<string>698636FA862739B7EB55AE48</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -293,11 +313,14 @@ fi
 				<string>6003F588195388D20070C39A</string>
 				<string>E31F3F44839373EE81C7C8F1</string>
 				<string>E4913A4442DA61890191410B</string>
+				<string>C6F0C9181CA9F6F4005CE566</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
 			<key>dependencies</key>
-			<array/>
+			<array>
+				<string>C6F0C9131CA9F6F4005CE566</string>
+			</array>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
@@ -328,6 +351,7 @@ fi
 			<array>
 				<string>6003F58A195388D20070C39A</string>
 				<string>6003F5AE195388D20070C39A</string>
+				<string>C6F0C90C1CA9F6F3005CE566</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -344,8 +368,9 @@ fi
 				<string>6003F58F195388D20070C39A</string>
 				<string>6003F591195388D20070C39A</string>
 				<string>6003F5AF195388D20070C39A</string>
-				<string>76AF74C033E47C753C120338</string>
-				<string>BC361173C9AF4B2A2B7A36FF</string>
+				<string>D5BC3EB967570691CF42BF90</string>
+				<string>D4655115C003862C1CDE8773</string>
+				<string>36D5A0729259A225AB6EFE5F</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -622,7 +647,7 @@ fi
 				<string>6003F5B0195388D20070C39A</string>
 				<string>6003F5B2195388D20070C39A</string>
 				<string>6003F5B1195388D20070C39A</string>
-				<string>4B12E64B09AEF252D0647A74</string>
+				<string>54B812414BB4499C57D05807</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -1158,12 +1183,21 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>698636FA862739B7EB55AE48</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D4655115C003862C1CDE8773</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>6F04C58B1195B57F62A6E298</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
 			<key>name</key>
 			<string>LICENSE</string>
 			<key>path</key>
@@ -1177,6 +1211,8 @@ fi
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
 			<key>name</key>
 			<string>MakemojiSDK-KeyboardExtension.podspec</string>
 			<key>path</key>
@@ -1184,25 +1220,14 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>76AF74C033E47C753C120338</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_MakemojiSDK_KeyboardExtension_Example.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
 		<key>7F30EAE4BB545059B3111391</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>net.daringfireball.markdown</string>
 			<key>name</key>
 			<string>README.md</string>
 			<key>path</key>
@@ -1230,25 +1255,42 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>BAEBD62F59517620B19EEF50</key>
+		<key>8B985064B3B1404D41C0CA73</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>9A8437F565F33141440B41BB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>76AF74C033E47C753C120338</string>
+			<string>D5BC3EB967570691CF42BF90</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC361173C9AF4B2A2B7A36FF</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_MakemojiSDK_KeyboardExtension_Tests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>C4056BED6348E2C523C34B54</key>
 		<dict>
@@ -1262,6 +1304,360 @@ fi
 			<string>Pods-MakemojiSDK-KeyboardExtension_Tests.debug.xcconfig</string>
 			<key>path</key>
 			<string>Pods/Target Support Files/Pods-MakemojiSDK-KeyboardExtension_Tests/Pods-MakemojiSDK-KeyboardExtension_Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6F0C9081CA9F6F3005CE566</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C6F0C9101CA9F6F4005CE566</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C6F0C9091CA9F6F3005CE566</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9A8437F565F33141440B41BB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C6F0C90A1CA9F6F3005CE566</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C6F0C90B1CA9F6F3005CE566</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C6F0C9171CA9F6F4005CE566</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8B985064B3B1404D41C0CA73</string>
+				<string>C6F0C9081CA9F6F3005CE566</string>
+				<string>C6F0C9091CA9F6F3005CE566</string>
+				<string>C6F0C90A1CA9F6F3005CE566</string>
+				<string>F6601B688BE35CEDD43EB74B</string>
+				<string>C85064C89EF3E40A83B9A532</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Emoji Keyboard</string>
+			<key>productName</key>
+			<string>Emoji Keyboard</string>
+			<key>productReference</key>
+			<string>C6F0C90C1CA9F6F3005CE566</string>
+			<key>productType</key>
+			<string>com.apple.product-type.app-extension</string>
+		</dict>
+		<key>C6F0C90C1CA9F6F3005CE566</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.app-extension</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Emoji Keyboard.appex</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C6F0C90D1CA9F6F3005CE566</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C6F0C90E1CA9F6F4005CE566</string>
+				<string>C6F0C90F1CA9F6F4005CE566</string>
+				<string>C6F0C9111CA9F6F4005CE566</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Emoji Keyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6F0C90E1CA9F6F4005CE566</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KeyboardViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6F0C90F1CA9F6F4005CE566</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KeyboardViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6F0C9101CA9F6F4005CE566</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C6F0C90F1CA9F6F4005CE566</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C6F0C9111CA9F6F4005CE566</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6F0C9121CA9F6F4005CE566</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>6003F582195388D10070C39A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>C6F0C90B1CA9F6F3005CE566</string>
+			<key>remoteInfo</key>
+			<string>Emoji Keyboard</string>
+		</dict>
+		<key>C6F0C9131CA9F6F4005CE566</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>C6F0C90B1CA9F6F3005CE566</string>
+			<key>targetProxy</key>
+			<string>C6F0C9121CA9F6F4005CE566</string>
+		</dict>
+		<key>C6F0C9141CA9F6F4005CE566</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C6F0C90C1CA9F6F3005CE566</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>RemoveHeadersOnCopy</string>
+				</array>
+			</dict>
+		</dict>
+		<key>C6F0C9151CA9F6F4005CE566</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D9E9C2402B018CCF44B7851D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Emoji Keyboard/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.demo.MakemojiSDK-KeyboardExtension-Example.Emoji-Keyboard</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C6F0C9161CA9F6F4005CE566</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D35EBA5B6DF07187ADE90602</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Emoji Keyboard/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.cocoapods.demo.MakemojiSDK-KeyboardExtension-Example.Emoji-Keyboard</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C6F0C9171CA9F6F4005CE566</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C6F0C9151CA9F6F4005CE566</string>
+				<string>C6F0C9161CA9F6F4005CE566</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C6F0C9181CA9F6F4005CE566</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>13</string>
+			<key>files</key>
+			<array>
+				<string>C6F0C9141CA9F6F4005CE566</string>
+			</array>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed App Extensions</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C85064C89EF3E40A83B9A532</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Emoji Keyboard/Pods-Emoji Keyboard-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D35EBA5B6DF07187ADE90602</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Emoji Keyboard.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Emoji Keyboard/Pods-Emoji Keyboard.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D4655115C003862C1CDE8773</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-MakemojiSDK-KeyboardExtension_Example.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>D5BC3EB967570691CF42BF90</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Emoji Keyboard.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>D9E9C2402B018CCF44B7851D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Emoji Keyboard.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Emoji Keyboard/Pods-Emoji Keyboard.debug.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1328,6 +1724,30 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>F6601B688BE35CEDD43EB74B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Emoji Keyboard/Pods-Emoji Keyboard-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>FDE4A1A4DB4E9A0CD03F5418</key>
 		<dict>
 			<key>children</key>
@@ -1336,6 +1756,8 @@ fi
 				<string>3260FDA570CB0B7A440CFB18</string>
 				<string>C4056BED6348E2C523C34B54</string>
 				<string>E02B2BBFDE47DE0C9E574FA7</string>
+				<string>D9E9C2402B018CCF44B7851D</string>
+				<string>D35EBA5B6DF07187ADE90602</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>

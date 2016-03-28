@@ -8,33 +8,25 @@
 
 Pod::Spec.new do |s|
   s.name             = "MakemojiSDK-KeyboardExtension"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of MakemojiSDK-KeyboardExtension."
+  s.version          = "1.0.18"
+  s.summary          = "A free emoji keyboard for mobile apps"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                       By installing our keyboard SDK every user of your app will instantly have access to new and trending emojis.  Our goal is to increase user engagement as well as provide actionable real time data on sentiment (how users feel) and affinity (what users like). With this extensive data collection your per-user & company valuation will increase along with your user-base.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MakemojiSDK-KeyboardExtension"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "Stephen Schroeder" => "steve.frederick.lp@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MakemojiSDK-KeyboardExtension.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage         = "https://github.com/makemoji/MakemojiSDK-KeyboardExtension"
+  s.author           = { "Makemoji SDK" => "sdk@makemoji.com" }
+  s.license      = { :type => 'Commercial' }
+  s.source       = { :git => 'https://github.com/makemoji/MakemojiSDK-KeyboardExtension.git', :tag => '1.0.18' }
+  s.platform     = :ios, '8.0'
+  s.requires_arc = false
+  s.vendored_libraries = 'Pod/Library/**/*.a'
+  s.resources = ['Pod/Assets/*']
+  s.source_files = 'Pod/Library/*.h'
+  s.public_header_files = 'Pod/Library/*.h'
+  s.frameworks = 'SystemConfiguration', 'UIKit'
+  s.dependency 'AFNetworking', '2.6.3'
+  s.dependency 'SDWebImage', '3.7.3'
 
-  s.platform     = :ios, '7.0'
-  s.requires_arc = true
-
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'MakemojiSDK-KeyboardExtension' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

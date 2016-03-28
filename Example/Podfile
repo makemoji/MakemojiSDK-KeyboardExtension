@@ -1,7 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
+platform :ios, '8.0'
 
 target 'MakemojiSDK-KeyboardExtension_Example', :exclusive => true do
+  pod 'MakemojiSDK-KeyboardExtension', :path => '../'
+end
+
+target 'Emoji Keyboard', :exclusive => true do
   pod 'MakemojiSDK-KeyboardExtension', :path => '../'
 end
 
