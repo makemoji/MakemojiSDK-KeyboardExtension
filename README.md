@@ -19,11 +19,3 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "MakemojiSDK-KeyboardExtension"
 ```
-
-## Author
-
-Stephen Schroeder, steve.frederick.lp@gmail.com
-
-## License
-
-MakemojiSDK-KeyboardExtension is available under the MIT license. See the LICENSE file for more info.
