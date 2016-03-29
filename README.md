@@ -1,6 +1,5 @@
 # MakemojiSDK-KeyboardExtension
 
-[![CI Status](http://img.shields.io/travis/Stephen Schroeder/MakemojiSDK-KeyboardExtension.svg?style=flat)](https://travis-ci.org/Stephen Schroeder/MakemojiSDK-KeyboardExtension)
 [![Version](https://img.shields.io/cocoapods/v/MakemojiSDK-KeyboardExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-KeyboardExtension)
 [![License](https://img.shields.io/cocoapods/l/MakemojiSDK-KeyboardExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-KeyboardExtension)
 [![Platform](https://img.shields.io/cocoapods/p/MakemojiSDK-KeyboardExtension.svg?style=flat)](http://cocoapods.org/pods/MakemojiSDK-KeyboardExtension)
