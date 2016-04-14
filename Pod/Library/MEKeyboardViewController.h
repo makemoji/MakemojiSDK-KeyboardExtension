@@ -25,4 +25,6 @@
 @property CGSize emojiInnerSize;
 @property NSMutableArray * categories;
 @property NSIndexPath * selectedCategoryIndexPath;
+@property (nonatomic, strong) UIButton *nextKeyboardButton;
+-(void)setupLayoutWithSize:(CGSize)size;
 @end
