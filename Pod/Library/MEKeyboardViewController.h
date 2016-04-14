@@ -21,4 +21,8 @@
 @property UIImageView * alertImageView;
 @property MEKeyboardNativeView * keyboardView;
 @property NSString * shareText;
+@property CGSize outputSize;
+@property CGSize emojiInnerSize;
+@property NSMutableArray * categories;
+@property NSIndexPath * selectedCategoryIndexPath;
 @end
