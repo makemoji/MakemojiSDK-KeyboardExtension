@@ -24,5 +24,9 @@
     @property UIButton * numberKey;
     @property NSString * keyboardState;
     @property NSTimer * deleteTimer;
+    @property UIColor * fontColor;
+    @property UIColor * keyColor;
+    @property UIColor * borderColor;
+
     -(void)layoutKeysWithFrame:(CGRect)frame;
 @end

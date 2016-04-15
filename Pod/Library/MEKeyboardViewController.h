@@ -26,5 +26,6 @@
 @property NSMutableArray * categories;
 @property NSIndexPath * selectedCategoryIndexPath;
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
+@property NSString * navigationCellClass;
 -(void)setupLayoutWithSize:(CGSize)size;
 @end
