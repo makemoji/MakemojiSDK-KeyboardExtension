@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol MEKeyboardNativeViewDelegate;
 
 @interface MEKeyboardNativeView : UIView
     @property UIView * rowOne;
@@ -17,16 +18,35 @@
     @property NSMutableArray * numericKeys;
     @property NSMutableArray * symbolKeys;
     @property (assign) id <UITextDocumentProxy> textDocumentProxy;
+    @property (assign) id <MEKeyboardNativeViewDelegate> inputViewController;
     @property UIButton * shiftKey;
     @property UIButton * deleteKey;
     @property UIButton * returnKey;
     @property UIButton * spaceKey;
     @property UIButton * numberKey;
+    @property UIButton * globeButton;
+    @property UIButton * emojiButton;
+
     @property NSString * keyboardState;
     @property NSTimer * deleteTimer;
+
     @property UIColor * fontColor;
     @property UIColor * keyColor;
     @property UIColor * borderColor;
+    @property UIColor * shiftColor;
 
-    -(void)layoutKeysWithFrame:(CGRect)frame;
+    @property CGFloat  rowHeight;
+    @property CGFloat betweenRows;
+    @property UIEdgeInsets padding;
+    @property CGSize defaultKeySize;
+    @property CGFloat betweenKeys;
+
+    -(void)updateLayout:(CGRect)frame;
+    -(void)updateKeySize;
+
+@end
+
+@protocol MEKeyboardNativeViewDelegate <NSObject>
+    -(void)meKeyboardNativeView:(MEKeyboardNativeView *)inputView didTapEmojiButton:(UIButton *)button;
+    -(void)meKeyboardNativeView:(MEKeyboardNativeView *)inputView didTapGlobeButton:(UIButton *)button;
 @end

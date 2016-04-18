@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MEKeyboardNativeView.h"
 
-@interface MEKeyboardViewController : UIInputViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MEKeyboardViewController : UIInputViewController <UICollectionViewDataSource, UICollectionViewDelegate, MEKeyboardNativeViewDelegate>
 
 @property UICollectionView * navigationCollectionView;
 @property UICollectionView * emojiCollectionView;
@@ -27,5 +27,8 @@
 @property NSIndexPath * selectedCategoryIndexPath;
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property NSString * navigationCellClass;
+@property UIColor * mainBackgroundColor;
 -(void)setupLayoutWithSize:(CGSize)size;
+-(void)showKeyboard:(BOOL)show;
+
 @end
