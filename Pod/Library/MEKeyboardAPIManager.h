@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
-
+static NSString *const MEKeyboardCategoryUnlockedSuccessNotification = @"MECategoryUnlockedSuccessNotification";
+static NSString *const MEKeyboardCategoryUnlockedFailedNotification = @"MECategoryUnlockedFailedNotification";
 
 @interface MEKeyboardAPIManager : AFHTTPSessionManager
 @property NSString * sdkKey;
@@ -18,5 +19,7 @@
 -(void)beginImageViewSessionWithTag:(NSString *)tag;
 -(void)endImageViewSession;
 -(void)clickWithEmoji:(NSDictionary *)emoji;
++(void)unlockCategory:(NSString *)category;
++(NSArray *)unlockedGroups;
 
 @end

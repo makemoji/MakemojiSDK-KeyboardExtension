@@ -30,5 +30,6 @@
 @property UIColor * mainBackgroundColor;
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
+-(void)didSelectCategory:(NSDictionary *)category atIndexPath:(NSIndexPath *)indexPath;
 
 @end
