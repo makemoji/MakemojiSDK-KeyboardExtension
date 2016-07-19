@@ -28,6 +28,8 @@
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property NSString * navigationCellClass;
 @property UIColor * mainBackgroundColor;
+@property BOOL displayVideoCollection;
+
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
 -(void)didSelectCategory:(NSDictionary *)category atIndexPath:(NSIndexPath *)indexPath;
