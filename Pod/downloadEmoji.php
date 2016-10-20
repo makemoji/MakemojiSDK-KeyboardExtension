@@ -2,13 +2,12 @@
 
 $emojiurl = "http://api.makemoji.com/sdk/emoji/emojiWall";
 $categoryurl = "http://api.makemoji.com/sdk/emoji/categories";
-$sdkKey = "bfd3eea60abad87d378f87939ef3a116e8b23a35";
+$sdkKey = "YOUR_SDK_KEY";
 
 $options = array(
   'http'=>array(
     'method'=>"GET",
     'header'=>"Accept-language: en\r\n" .
-              "Cookie: foo=bar\r\n" .
               "makemoji-sdkkey: ".$sdkKey."\r\n".
               "makemoji-deviceId: Download\r\n".  // check function.stream-context-create on php.net
               "User-Agent: MakemojiDownloadScript\r\n" // i.e. An iPad 
