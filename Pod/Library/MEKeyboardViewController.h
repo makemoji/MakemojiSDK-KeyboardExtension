@@ -29,6 +29,7 @@
 @property NSString * navigationCellClass;
 @property UIColor * mainBackgroundColor;
 @property BOOL displayVideoCollection;
+@property BOOL enableUpdates;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
