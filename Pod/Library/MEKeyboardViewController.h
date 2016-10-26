@@ -30,6 +30,8 @@
 @property UIColor * mainBackgroundColor;
 @property BOOL displayVideoCollection;
 @property BOOL enableUpdates;
+@property BOOL enableTrending;
+@property BOOL enableUsed;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
