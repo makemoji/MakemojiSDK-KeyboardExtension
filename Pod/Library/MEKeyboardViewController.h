@@ -13,6 +13,7 @@
 
 @property UICollectionView * navigationCollectionView;
 @property UICollectionView * emojiCollectionView;
+@property UICollectionView * searchCollectionView;
 @property UILabel * sectionLabel;
 @property UIButton * shareButton;
 @property UIButton * backspaceButton;
@@ -32,9 +33,11 @@
 @property BOOL enableUpdates;
 @property BOOL enableTrending;
 @property BOOL enableUsed;
+@property NSString * keyboardImageName;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
 -(void)didSelectCategory:(NSDictionary *)category atIndexPath:(NSIndexPath *)indexPath;
+-(void)loadedCategoryData;
 
 @end

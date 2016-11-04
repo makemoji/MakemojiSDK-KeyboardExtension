@@ -40,6 +40,7 @@
     @property UIEdgeInsets padding;
     @property CGSize defaultKeySize;
     @property CGFloat betweenKeys;
+    @property NSString * emojiButtonImageName;
 
     -(void)updateLayout:(CGRect)frame;
     -(void)updateKeySize;
@@ -49,4 +50,5 @@
 @protocol MEKeyboardNativeViewDelegate <NSObject>
     -(void)meKeyboardNativeView:(MEKeyboardNativeView *)inputView didTapEmojiButton:(UIButton *)button;
     -(void)meKeyboardNativeView:(MEKeyboardNativeView *)inputView didTapGlobeButton:(UIButton *)button;
+    -(void)meKeyboardNativeView:(MEKeyboardNativeView *)inputView didInsertText:(NSString *)text;
 @end
