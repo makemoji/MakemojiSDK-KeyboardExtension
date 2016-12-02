@@ -34,6 +34,7 @@
 @property BOOL enableTrending;
 @property BOOL enableUsed;
 @property NSString * keyboardImageName;
+@property BOOL disableNavScrolling;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
