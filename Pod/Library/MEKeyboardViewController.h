@@ -40,5 +40,6 @@
 -(void)showKeyboard:(BOOL)show;
 -(void)didSelectCategory:(NSDictionary *)category atIndexPath:(NSIndexPath *)indexPath;
 -(void)loadedCategoryData;
+-(void)showCopiedAlertWithImageURL:(NSString *)imageUrl;
 
 @end
