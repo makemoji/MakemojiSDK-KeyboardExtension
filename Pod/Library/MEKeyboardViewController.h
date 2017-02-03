@@ -35,11 +35,17 @@
 @property BOOL enableUsed;
 @property NSString * keyboardImageName;
 @property BOOL disableNavScrolling;
+@property (readonly) NSString * selectedCategoryKey;
+@property (readonly) NSArray * selectedCategoryData;
+@property NSMutableDictionary * allEmoji;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;
 -(void)didSelectCategory:(NSDictionary *)category atIndexPath:(NSIndexPath *)indexPath;
 -(void)loadedCategoryData;
 -(void)showCopiedAlertWithImageURL:(NSString *)imageUrl;
+-(void)loadTrendingEmoji;
+-(void)loadedAllEmoji;
+-(BOOL)isCategoryLocked:(NSString *)categoryName;
 
 @end
