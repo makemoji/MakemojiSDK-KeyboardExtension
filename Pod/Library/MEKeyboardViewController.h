@@ -35,8 +35,6 @@
 @property BOOL enableUsed;
 @property NSString * keyboardImageName;
 @property BOOL disableNavScrolling;
-@property (readonly) NSString * selectedCategoryKey;
-@property (readonly) NSArray * selectedCategoryData;
 @property NSMutableDictionary * allEmoji;
 
 -(void)setupLayoutWithSize:(CGSize)size;
