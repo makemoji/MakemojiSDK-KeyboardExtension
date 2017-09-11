@@ -16,8 +16,8 @@
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "UIImage+Tint.h"
-#import "SDWebImageManager.h"
-#import "SDWebImagePrefetcher.h"
+#import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/SDWebImagePrefetcher.h>
 #import "MEKeyboardReusableHeaderView.h"
 
 @interface MEKeyboardViewController ()
