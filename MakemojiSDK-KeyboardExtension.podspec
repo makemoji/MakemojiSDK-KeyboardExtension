@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'SystemConfiguration', 'UIKit', 'AdSupport'
   s.dependency 'AFNetworking', '>= 2.6.3'
-  s.dependency 'SDWebImage', '>= 3.7.3'
+  s.dependency 'SDWebImage', '3.8.2'
   s.resource_bundles = {
   	'MakemojiSDK-KeyboardExtension' => ['Pod/Assets/*']
   }  
