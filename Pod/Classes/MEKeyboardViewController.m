@@ -109,7 +109,8 @@
     self.nextKeyboardButton.tintColor = [UIColor colorWithRed:0.34 green:0.36 blue:0.39 alpha:1];
     self.nextKeyboardButton.titleLabel.textColor = [UIColor colorWithRed:0.34 green:0.36 blue:0.39 alpha:1];
     [self.nextKeyboardButton setTitleColor:[UIColor colorWithRed:0.34 green:0.36 blue:0.39 alpha:1] forState:UIControlStateNormal];
-    [self.nextKeyboardButton setImage:[UIImage imageNamed:@"MEGlobeButton"] forState:UIControlStateNormal];
+
+    [self.nextKeyboardButton setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEGlobeButton" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     //[self.nextKeyboardButton setImageEdgeInsets:UIEdgeInsetsMake(4, 4, 4, 4)];
     [self.nextKeyboardButton addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.nextKeyboardButton];
@@ -187,7 +188,9 @@
     [self.view addSubview:self.shareButton];
 
     self.backspaceButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.backspaceButton setImage:[[UIImage imageNamed:@"MEDeleteBackwardsButtonLarge"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    
+    
+    [self.backspaceButton setImage:[[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEDeleteBackwardsButtonLarge" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [self.backspaceButton addTarget:self action:@selector(deleteButtonTapped) forControlEvents:UIControlEventTouchDown];
     [self.backspaceButton addTarget:self action:@selector(deleteButtonRelease) forControlEvents:UIControlEventTouchUpInside];
     [self.backspaceButton.imageView setTintColor:[UIColor colorWithRed:0.309 green:0.33 blue:0.364 alpha:1]];
@@ -639,11 +642,12 @@
             
             
             if ([[dict objectForKey:@"gif"] boolValue] == YES && [dict objectForKey:@"40x40_url"]) {
-                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"40x40_url"]] placeholderImage:[UIImage imageNamed:@"emojiplaceholder"]];
+                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"40x40_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
+                
             } else {
                 NSString * imageUrl = [[dict objectForKey:@"image_url"] stringByReplacingOccurrencesOfString:@"-256" withString:@""];
                 imageUrl = [imageUrl stringByReplacingOccurrencesOfString:@"@2x.png" withString:@"-large@2x.png"];
-                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:imageUrl] placeholderImage:[UIImage imageNamed:@"emojiplaceholder"] options:SDWebImageHighPriority completed:nil];
+                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:imageUrl] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] options:SDWebImageHighPriority completed:nil];
                 
             }
 
@@ -688,12 +692,12 @@
             imageName = self.keyboardImageName;
         }
         
-        UIImage * catImage = [UIImage imageNamed:imageName];
+        UIImage * catImage = [UIImage imageNamed:[NSString stringWithFormat:@"MakemojiSDK-KeyboardExtension.bundle/%@", imageName] inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         
         photoCell.imageView.image = nil;
         
         if (catImage != nil) {
-            [photoCell.imageView setImage:[UIImage imageNamed:imageName]];
+            [photoCell.imageView setImage:catImage];
         } else {
             [photoCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:nil];
         }
@@ -718,14 +722,14 @@
         emojiCell.previewImage.image = nil;
         emojiCell.emojiLabel.text = [dict objectForKey:@"name"];
         emojiCell.emojiLabel.textColor = [UIColor blackColor];
-        [emojiCell.previewImage sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"emojiplaceholder"]];
+        [emojiCell.previewImage sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
         return emojiCell;
     }
     
     if ([[catDict objectForKey:@"gif"] boolValue] == YES) {
         MEKeyboardGifCollectionViewCell * emojiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EmojiGif" forIndexPath:indexPath];
         emojiCell.imageView.image = nil;
-        [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"emojiplaceholder"]];
+        [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
         
         return emojiCell;
     }
@@ -935,15 +939,15 @@
     }
     self.lastSharedEmoji = emojiDict;
     
-    NSLog(@"share");
+    //NSLog(@"share");
     
     if ([[SDImageCache sharedImageCache] diskImageExistsWithKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]] absoluteString]]) {
-        NSLog(@"shared from cache");
+        //NSLog(@"shared from cache");
         [self shareEmojiWithDictionary:emojiDict];
         return;
     }
     
-    NSLog(@"cache miss");
+    //NSLog(@"cache miss");
     
     [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[self urlForPath:[emojiDict objectForKey:@"image_url"]] options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -17,7 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [[MEKeyboardAPIManager client] setSdkKey:@"YOUR_SDK_KEY"];
+        [[MEKeyboardAPIManager client] setSdkKey:@"940ced93abf2ca4175a4a865b38f1009d8848a58"];
         self.shareText = @"Check out the Makemoji App: http://appstore.com/makemoji";
     }
     return self;
