@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 static NSString *const MEKeyboardCategoryUnlockedSuccessNotification = @"MECategoryUnlockedSuccessNotification";
 static NSString *const MEKeyboardCategoryUnlockedFailedNotification = @"MECategoryUnlockedFailedNotification";
 
