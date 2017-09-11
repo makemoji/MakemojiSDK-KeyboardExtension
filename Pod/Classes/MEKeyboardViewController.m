@@ -826,13 +826,22 @@
         NSData * data = [NSData dataWithContentsOfFile:path];
         if (data == nil) {
             SDWebImageManager *manager = [SDWebImageManager sharedManager];
-            
-            [manager downloadImageWithURL:[self urlForPath:[emojiDict objectForKey:@"image_url"]] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+
+            [manager loadImageWithURL:[self urlForPath:[emojiDict objectForKey:@"image_url"]] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
                 NSString * newpath = [[SDImageCache sharedImageCache] defaultCachePathForKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]]absoluteString]];
                 NSData * newdata = [NSData dataWithContentsOfFile:newpath];
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
                 [pasteboard setData:newdata forPasteboardType:@"com.compuserve.gif"];
             }];
+            
+            
+            
+//            [manager downloadImageWithURL:[self urlForPath:[emojiDict objectForKey:@"image_url"]] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//                NSString * newpath = [[SDImageCache sharedImageCache] defaultCachePathForKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]]absoluteString]];
+//                NSData * newdata = [NSData dataWithContentsOfFile:newpath];
+//                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+//                [pasteboard setData:newdata forPasteboardType:@"com.compuserve.gif"];
+//            }];
             
             return;
         }
@@ -941,7 +950,7 @@
     
     //NSLog(@"share");
     
-    if ([[SDImageCache sharedImageCache] diskImageExistsWithKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]] absoluteString]]) {
+    if ([[SDImageCache sharedImageCache] imageFromCacheForKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]] absoluteString]]) {
         //NSLog(@"shared from cache");
         [self shareEmojiWithDictionary:emojiDict];
         return;
