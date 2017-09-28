@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MakemojiSDK-KeyboardExtension"
-  s.version          = "1.1.6"
+  s.version          = "1.1.7"
   s.summary          = "A free emoji keyboard for mobile apps"
 
   s.description      = <<-DESC
@@ -18,13 +18,14 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/makemoji/MakemojiSDK-KeyboardExtension"
   s.author           = { "Makemoji SDK" => "sdk@makemoji.com" }
   s.license      = { :type => 'Commercial' }
-  s.source       = { :git => 'https://github.com/makemoji/MakemojiSDK-KeyboardExtension.git', :tag => '1.1.6' }
+  s.source       = { :git => 'https://github.com/makemoji/MakemojiSDK-KeyboardExtension.git', :tag => '1.1.7' }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'SystemConfiguration', 'UIKit', 'AdSupport'
   s.dependency 'AFNetworking', '>= 2.6.3'
   s.dependency 'SDWebImage'
+  s.dependency 'SDWebImage/GIF'
   s.resource_bundles = {
   	'MakemojiSDK-KeyboardExtension' => ['Pod/Assets/*']
   }  

@@ -7,7 +7,8 @@
 //
 
 #import "MEKeyboardEmojiCollectionViewCell.h"
+#import <FLAnimatedImage/FLAnimatedImageView.h>
 
-@interface MEKeyboardGifCollectionViewCell : MEKeyboardEmojiCollectionViewCell
-
+@interface MEKeyboardGifCollectionViewCell : UICollectionViewCell
+@property (nonatomic, retain)  FLAnimatedImageView * imageView;
 @end

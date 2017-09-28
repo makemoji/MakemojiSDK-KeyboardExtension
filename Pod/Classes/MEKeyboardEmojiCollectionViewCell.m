@@ -24,7 +24,7 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    self.imageView.center = self.contentView.center;
+    self.imageView.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
 }
 
 -(void)prepareForReuse {

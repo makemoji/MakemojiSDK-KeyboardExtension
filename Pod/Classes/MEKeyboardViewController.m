@@ -642,7 +642,7 @@
             
             
             if ([[dict objectForKey:@"gif"] boolValue] == YES && [dict objectForKey:@"40x40_url"]) {
-                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"40x40_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
+                [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
                 
             } else {
                 NSString * imageUrl = [[dict objectForKey:@"image_url"] stringByReplacingOccurrencesOfString:@"-256" withString:@""];
@@ -652,7 +652,23 @@
             }
 
         }
-    
+
+        if ([cell isKindOfClass:[MEKeyboardGifCollectionViewCell class]]) {
+            
+            NSDictionary * dict;
+            if (collectionView == self.searchCollectionView) {
+                dict = [self.searchEmoji objectAtIndex:indexPath.item];
+            } else {
+                dict = [[self selectedCategoryDataForSection:indexPath.section] objectAtIndex:indexPath.item];
+            }
+            
+            MEKeyboardGifCollectionViewCell * gifCell = (MEKeyboardGifCollectionViewCell* ) cell;
+            if ([[dict objectForKey:@"gif"] boolValue] == YES) {
+                [gifCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
+                
+            }
+        }
+        
     }
 }
 
@@ -726,10 +742,10 @@
         return emojiCell;
     }
     
-    if ([[catDict objectForKey:@"gif"] boolValue] == YES) {
+    if ([[dict objectForKey:@"gif"] boolValue] == YES) {
         MEKeyboardGifCollectionViewCell * emojiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EmojiGif" forIndexPath:indexPath];
         emojiCell.imageView.image = nil;
-        [emojiCell.imageView sd_setImageWithURL:[self urlForPath:[dict objectForKey:@"image_url"]] placeholderImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/emojiplaceholder" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
+
         
         return emojiCell;
     }
