@@ -36,6 +36,7 @@
 @property NSString * keyboardImageName;
 @property BOOL disableNavScrolling;
 @property NSMutableDictionary * allEmoji;
+@property CGFloat currentHeight;
 
 -(void)setupLayoutWithSize:(CGSize)size;
 -(void)showKeyboard:(BOOL)show;

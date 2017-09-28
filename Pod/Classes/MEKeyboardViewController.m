@@ -37,7 +37,6 @@
 @property BOOL ignoreScrollSelection;
 @property NSDictionary *lastSharedEmoji;
 @property NSInteger visibleSection;
-@property CGFloat currentHeight;
 @end
 
 @implementation MEKeyboardViewController {

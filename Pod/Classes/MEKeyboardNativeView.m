@@ -76,7 +76,7 @@
     [self.shiftKey setTintColor:self.fontColor];
     self.shiftKey.tag = 111;
     if ([self.keyboardState isEqualToString:@"alpha"]) {
-        [self.shiftKey setImage:[UIImage imageNamed:@"MEShiftButton"] forState:UIControlStateNormal];
+        [self.shiftKey setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEShiftButton" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
         [self.shiftKey setImageEdgeInsets:UIEdgeInsetsMake(11, 10, 11, 10)];
     } else {
         self.shiftKey.tag = 333;
@@ -116,7 +116,7 @@
     self.deleteKey = [self keyboardButtonWithSize:CGSizeMake(self.shiftKey.frame.size.width, self.rowThree.frame.size.height)];
     [self.deleteKey setTintColor:self.fontColor];
     [self.deleteKey setBackgroundColor:self.shiftColor];
-    [self.deleteKey setImage:[UIImage imageNamed:@"MEDeleteBackwardsButtonLarge"] forState:UIControlStateNormal];
+    [self.deleteKey setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEDeleteBackwardsButtonLarge" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [self.deleteKey addTarget:self action:@selector(deleteButtonTapped) forControlEvents:UIControlEventTouchDown];
     [self.deleteKey addTarget:self action:@selector(deleteButtonRelease) forControlEvents:UIControlEventTouchUpInside];
     [self.rowThree addSubview:self.deleteKey];
@@ -137,7 +137,7 @@
     [self.globeButton setTintColor:self.fontColor];
     [self.globeButton setImageEdgeInsets:UIEdgeInsetsMake(11, 10.5, 11, 10.5)];
     [self.globeButton setBackgroundColor:self.shiftColor];
-    [self.globeButton setImage:[UIImage imageNamed:@"MEGlobeButton"] forState:UIControlStateNormal];
+    [self.globeButton setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEGlobeButton" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [self.globeButton addTarget:self action:@selector(globeKeyPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.globeButton.frame = CGRectZero;
     [self.rowFour addSubview:self.globeButton];
@@ -296,11 +296,11 @@
         sel = @selector(uppercaseString);
         [self.shiftKey setBackgroundColor:self.keyColor];
         self.shiftKey.tag = 222;
-        [self.shiftKey setImage:[UIImage imageNamed:@"MEShiftButtonEnabled"] forState:UIControlStateNormal];
+        [self.shiftKey setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEShiftButtonEnabled" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     } else {
         [self.shiftKey setBackgroundColor:self.shiftColor];
         self.shiftKey.tag = 111;
-        [self.shiftKey setImage:[UIImage imageNamed:@"MEShiftButton"] forState:UIControlStateNormal];
+        [self.shiftKey setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEShiftButton" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     }
     
 [UIView performWithoutAnimation:^{
