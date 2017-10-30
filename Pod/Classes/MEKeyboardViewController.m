@@ -322,8 +322,6 @@
             //[header addSubview:self.buyAllButton];
         }
         NSString * catName =  [[self.categories objectAtIndex:indexPath.section] objectForKey:@"name"];
-        NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:12]};
-        CGSize textSize = [[catName uppercaseString] sizeWithAttributes:attributes];
         header.sectionLabel.text = [catName uppercaseString];
         [header.sectionLabel sizeToFit];
         return header;
@@ -631,7 +629,6 @@
                 dict = [[self selectedCategoryDataForSection:indexPath.section] objectAtIndex:indexPath.item];
             }
             
-            NSString * imageUrl;
             NSURL * url;
             if (![[dict objectForKey:@"image_url"] hasPrefix:@"https://"]) {
                 url = [NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:[dict objectForKey:@"image_url"]]];
@@ -729,7 +726,6 @@
         dict = [[self selectedCategoryDataForSection:indexPath.section] objectAtIndex:indexPath.item];
     }
     
-    NSDictionary * catDict = [self.categories objectAtIndex:indexPath.section];
     [[MEKeyboardAPIManager client] imageViewWithId:[dict objectForKey:@"id"]];
 
     if ([self isCategoryVideoCollection:indexPath.section]) {
@@ -777,7 +773,7 @@
 -(void)shareEmojiWithDictionary:(NSDictionary *)emojiDict {
     emojiDict = self.lastSharedEmoji;
     NSString * path = [[SDImageCache sharedImageCache] defaultCachePathForKey:[[self urlForPath:[emojiDict objectForKey:@"image_url"]] absoluteString]];
-    NSLog(@"got to share", path);
+
     if (![[emojiDict objectForKey:@"image_url"] hasPrefix:@"https://"]) {
         path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:[emojiDict objectForKey:@"image_url"]];
     }
@@ -954,7 +950,6 @@
     }
     
      NSDictionary * emojiDict;
-    __weak MEKeyboardViewController * weakSelf = self;
     
     if (collectionView == self.searchCollectionView) {
         emojiDict = [self.searchEmoji objectAtIndex:indexPath.item];
@@ -1042,7 +1037,6 @@
 
 
 -(NSURL*)urlForPath:(NSString *)path {
-    NSString * imageUrl;
     NSURL * url;
     if (![path hasPrefix:@"https://"] && ![path hasPrefix:@"http://"]) {
         url = [NSURL fileURLWithPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:path]];
@@ -1106,7 +1100,7 @@
     
 }
 
--(NSArray *)selectedCategoryDataForSection:(NSInteger *)section {
+-(NSArray *)selectedCategoryDataForSection:(NSInteger)section {
     if (self.categories.count > 0) {
         NSString * catName = [[self.categories objectAtIndex:section] objectForKey:@"name"];
         return [self.allEmoji objectForKey:catName];
@@ -1184,7 +1178,6 @@
     
     NSError * error;
 
-    NSURL *url = [NSURL fileURLWithPath:path];
     NSData * data = [NSData dataWithContentsOfFile:path];
     
     if (data != nil) {
