@@ -54,7 +54,7 @@
         self.ignoreScrollSelection = NO;
         self.shareText = @"";
         self.emojiInnerSize = CGSizeMake(61.44, 61.44);
-        self.outputSize = CGSizeMake(71.44, 71.44);
+        self.outputSize = CGSizeMake(100, 100);
         self.navigationCellClass = @"MEKeyboardNavigationCollectionViewCell";
         self.mainBackgroundColor = [UIColor colorWithRed:0.925 green:0.933 blue:0.945 alpha:1];
         self.displayVideoCollection = NO;
