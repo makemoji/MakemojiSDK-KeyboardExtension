@@ -137,7 +137,9 @@
     [newLayout2 setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     newLayout2.minimumInteritemSpacing = 0;
     newLayout2.minimumLineSpacing = 0;
-    newLayout2.sectionHeadersPinToVisibleBounds = YES;
+    if (@available(iOS 9.0, *)) {
+        newLayout2.sectionHeadersPinToVisibleBounds = YES;
+    }
     self.emojiCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:newLayout2];
     [self.emojiCollectionView setBackgroundColor:[UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1]];
     self.emojiCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -215,11 +217,11 @@
 
     
     self.fullAccessLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.fullAccessLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.95];
-    self.fullAccessLabel.text = @"Full Access must be enabled to use the keyboard.";
-    self.fullAccessLabel.textColor = [UIColor whiteColor];
+    self.fullAccessLabel.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
+    self.fullAccessLabel.text = @"Full Access must be enabled to connect.";
+    self.fullAccessLabel.textColor = [UIColor darkGrayColor];
     self.fullAccessLabel.numberOfLines = 2;
-    self.fullAccessLabel.font = [UIFont boldSystemFontOfSize:18];
+    self.fullAccessLabel.font = [UIFont boldSystemFontOfSize:14];
     self.fullAccessLabel.textAlignment = NSTextAlignmentCenter;
     self.fullAccessLabel.hidden = YES;
     [self.view addSubview:self.fullAccessLabel];
@@ -254,7 +256,8 @@
         }
         
         if ([self isOpenAccessGranted] == NO) {
-            [self showNoDataWithMessage:@"Full Access must be enabled to use this keyboard."];
+            [self showKeyboard:YES];
+            [self showNoDataWithMessage:@"Full Access must be enabled to connect."];
         }
     }];
     
@@ -568,11 +571,8 @@
     }
     
     if ([self isOpenAccessGranted] == NO) {
-        NSMutableArray * arr = [NSMutableArray array];
-        [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"http://",@"image_url",@"Keyboard",@"name", nil]];
-        self.categories = arr;
-        [self.navigationCollectionView reloadData];
-        [self showNoDataWithMessage:@"Full Access must be enabled to use this keyboard."];
+        [self showKeyboard:YES];
+        [self showNoDataWithMessage:@"Full Access must be enabled to connect."];
     }
     
     self.keyboardView.frame = CGRectMake(0, size.height-216, size.width, 216);
@@ -581,14 +581,20 @@
 
 -(void)showNoDataWithMessage:(NSString *)message {
     self.fullAccessLabel.text = message;
-    self.fullAccessLabel.frame = CGRectMake(0, 0, self.inputView.frame.size.width, self.inputView.frame.size.height-self.navigationCollectionView.frame.size.height);
+    CGFloat messageHeight = self.inputView.frame.size.height-self.navigationCollectionView.frame.size.height;
+    if (self.keyboardView.hidden == NO) {
+        messageHeight = self.searchCollectionView.frame.size.height+self.searchCollectionView.frame.origin.y;
+    }
+    self.fullAccessLabel.frame = CGRectMake(0, 0, self.inputView.frame.size.width, messageHeight);
     [self.view bringSubviewToFront:self.fullAccessLabel];
     self.fullAccessLabel.hidden = NO;
 }
 
 -(void)hideNoData {
-    self.fullAccessLabel.hidden = YES;
-    [self.view sendSubviewToBack:self.fullAccessLabel];
+    if ([self isOpenAccessGranted]) {
+        self.fullAccessLabel.hidden = YES;
+        [self.view sendSubviewToBack:self.fullAccessLabel];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -726,8 +732,10 @@
         dict = [[self selectedCategoryDataForSection:indexPath.section] objectAtIndex:indexPath.item];
     }
     
-    [[MEKeyboardAPIManager client] imageViewWithId:[dict objectForKey:@"id"]];
-
+    if ([dict objectForKey:@"id"] != nil) {
+        [[MEKeyboardAPIManager client] imageViewWithId:[dict objectForKey:@"id"]];
+    }
+    
     if ([self isCategoryVideoCollection:indexPath.section]) {
         MEKeyboardVideoCollectionViewCell * emojiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Video" forIndexPath:indexPath];
         emojiCell.previewImage.image = nil;
@@ -1065,7 +1073,9 @@
 
 -(void)showKeyboard:(BOOL)show {
     if (show) {
-        [self hideNoData];
+        CGRect faFrame = self.fullAccessLabel.frame;
+        faFrame.size.height = self.searchCollectionView.frame.size.height+self.searchCollectionView.frame.origin.y;
+        self.fullAccessLabel.frame = faFrame;
         self.searchCollectionView.hidden = NO;
         self.searchEmoji = [NSMutableArray arrayWithArray:[self trendingEmoji]];
         [self.searchCollectionView reloadData];
@@ -1087,11 +1097,11 @@
         self.emojiCollectionView.hidden = NO;
 
         if ([self connected] == NO && self.enableUpdates == YES) {
-            [self showNoDataWithMessage:@"Internet access must be enabled to use this keyboard."];
+            [self showNoDataWithMessage:@"Internet access must be enabled to connect."];
         }
         
         if ([self isOpenAccessGranted] == NO) {
-            [self showNoDataWithMessage:@"Full Access must be enabled to use this keyboard."];
+            [self showNoDataWithMessage:@"Full Access must be enabled to connect."];
         }
     }
 }
@@ -1201,6 +1211,23 @@
 }
 
 -(BOOL)isOpenAccessGranted {
+    if (@available(iOS 11.0, *)) {
+        return self.hasFullAccess;
+    }
+    
+    if (@available(iOS 10.0, *)) {
+        NSString * orgString = [[UIPasteboard generalPasteboard] string];
+        if (orgString == nil) {
+            orgString = @"";
+        }
+        [[UIPasteboard generalPasteboard] setString:@" "];
+        if ([[UIPasteboard generalPasteboard] hasStrings]) {
+            [[UIPasteboard generalPasteboard] setString:orgString];
+            return YES;
+        }
+        return NO;
+    }
+    
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     if (pasteboard) {
         return YES;

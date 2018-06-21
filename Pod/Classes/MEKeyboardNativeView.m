@@ -146,7 +146,11 @@
     [self.emojiButton setImageEdgeInsets:UIEdgeInsetsMake(11, 6, 11, 6)];
     [self.emojiButton setBackgroundColor:self.shiftColor];
     [self.emojiButton setTintColor:self.fontColor];
-    [self.emojiButton setImage:[UIImage imageNamed:self.emojiButtonImageName] forState:UIControlStateNormal];
+    if ([self.emojiButtonImageName isEqualToString:@"MEKeyboard-emoji"]) {
+        [self.emojiButton setImage:[UIImage imageNamed:@"MakemojiSDK-KeyboardExtension.bundle/MEKeyboard-emoji" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    } else {
+        [self.emojiButton setImage:[UIImage imageNamed:self.emojiButtonImageName] forState:UIControlStateNormal];
+    }
     [self.emojiButton addTarget:self action:@selector(emojiKeyPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.emojiButton.frame = CGRectZero;
     [self.rowFour addSubview:self.emojiButton];
